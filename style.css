@@ -1,0 +1,17 @@
+body{
+   background-color: hsl(275, 100%, 97%);
+   margin: 0;
+   padding: 0;
+}
+
+.bg-img{
+    width: 100%;
+}
+
+.accordion-container{
+    width: 70%;
+    border-radius: 10px;
+    height: 70vh;
+    margin: 0 auto;
+    background-color: hsl(0, 0%, 100%);
+}
