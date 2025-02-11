@@ -2,6 +2,7 @@ body{
    background-color: hsl(275, 100%, 97%);
    margin: 0;
    padding: 0;
+   position: relative;
 }
 
 .bg-img{
@@ -9,9 +10,38 @@ body{
 }
 
 .accordion-container{
-    width: 70%;
+    width: 90%;
     border-radius: 10px;
     height: 70vh;
-    margin: 0 auto;
+    margin: 0 10px;
     background-color: hsl(0, 0%, 100%);
+    position: absolute;
+    top: 8em;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card-title{
+    display: flex;
+    padding-left: 2em;
+    padding-top: 1em;
+
+}
+.card-title h1{
+    padding-left: .5em;
+}
+
+.accordion-card .answer{
+    display: none;
+}
+
+.a-header{
+    display: flex;
+}
+
+.show{
+    display:block;
 }
