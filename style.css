@@ -34,7 +34,7 @@ main{
     padding-left: .5em;
 }
 
-.accordion-card .answer{
+.answer{
     display: none;
 }
 
@@ -44,4 +44,8 @@ main{
 
 .show{
     display:block;
+}
+
+.minus-icon{
+    display: none;
 }
