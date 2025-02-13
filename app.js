@@ -17,6 +17,7 @@
 
 // Assume all accordion items are inside a container with the class "accordion-container"
 const accordionContainer = document.querySelector('.accordion-container');
+const plusIcon = document.querySelectorAll('.plus-icon');
 
 accordionContainer.addEventListener('click', (e) => {
     // Check if the clicked element is one that should trigger the toggle
@@ -27,7 +28,12 @@ accordionContainer.addEventListener('click', (e) => {
             const answer = aHeader.nextElementSibling;
             if (answer && answer.classList.contains('answer')) {
                 answer.classList.toggle('show');
+                plusIcon.src = "assets/images/icon-minus.svg"
+            } else {
+                plusIcon.src = "assets/images/icon-plus.svg" 
             }
+ 
         }
+        
     }
 });
