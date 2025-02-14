@@ -1,40 +1,3 @@
-// const aHeader = document.querySelector('.a-header');
-
-
-// aHeader.addEventListener('click',(e) => {
-//     //check if the targeted element has a classname of 'question' and 'plus-icon'
-//     if(e.target.classList.contains('question') || e.target.classList.contains('plus-icon')){
-//         // Get access to the next element sibling
-//         const answer = aHeader.nextElementSibling;
-
-//         // Check if the next element exist and has a classname of anwser toggle the show class
-//         if( answer && answer.classList.contains('answer')){
-//             answer.classList.toggle('show');
-//         }  
-//   }
- 
-// }) 
-
-// Assume all accordion items are inside a container with the class "accordion-container"
-const accordionContainer = document.querySelector('.accordion-container');
-const plusIcon = document.querySelector('.plus-icon');
-
-accordionContainer.addEventListener('click', (e) => {
-    // Check if the clicked element is one that should trigger the toggle
-    if (e.target.classList.contains('question') || e.target.classList.contains('plus-icon')) {
-        // Use closest() to find the nearest parent element that is the header
-        const aHeader = e.target.closest('.a-header');
-        if (aHeader) {
-            const answer = aHeader.nextElementSibling;
-            if (answer && answer.classList.contains('answer')) {
-                answer.classList.toggle('show');
-            } 
- 
-        }
-        
-    }
-});
-
 
 //Psuado code
 /*
@@ -46,3 +9,28 @@ accordionContainer.addEventListener('click', (e) => {
         .The minus icon should change to plus
 
 */
+
+const accordionContainer = document.querySelector('.accordion-container');
+
+accordionContainer.addEventListener('click', (e) => {
+  // Find the nearest parent with the class 'a-header' that was clicked
+  const aHeader = e.target.closest('.a-header');
+  if (!aHeader) return; // If no header was clicked, exit
+
+  // Get the answer element which is assumed to be the next sibling of the header
+  const answer = aHeader.nextElementSibling;
+  if (answer && answer.classList.contains('answer')) {
+    // Toggle the 'show' class on the answer element
+    answer.classList.toggle('show');
+
+    // Find the plus icon within this header
+    const plusIcon = aHeader.querySelector('.plus-icon');
+    if (plusIcon) {
+      // Update the icon based on whether the answer is shown
+      plusIcon.src = answer.classList.contains('show')
+        ? "assets/images/icon-minus.svg"
+        : "assets/images/icon-plus.svg";
+    }
+  }
+});
+
