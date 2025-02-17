@@ -11,7 +11,8 @@ body{
 }
 
 .accordion-container{
-    width: auto;
+    width: 90%;
+    max-width: 600px;
     border-radius: 10px;
     height: auto;
     margin: 0 10px;
@@ -33,7 +34,7 @@ hr {
 }
 
 .question:hover{
-    cursor:poi;
+    cursor:pointer;
 }
 
 
@@ -80,3 +81,26 @@ main{
     display: none;
 }
 
+/* Media query : 1200px*/
+@media screen and (min-width:1200px){
+    .accordion-container{
+        top: 5em;
+        max-width: 650px;
+    }
+
+    .accordion-card  .question{
+        width: 95%;
+        
+    }
+
+    .a-header img{
+        padding-left: 3em;
+    }
+
+    .answer{
+        width: 99%;
+        line-height: 27px;
+    }
+
+   
+}
